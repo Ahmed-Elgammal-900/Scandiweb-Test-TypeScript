@@ -1,7 +1,6 @@
-import { useRouteError, useNavigate } from "react-router";
+import { useRouteError, useNavigate, isRouteErrorResponse } from "react-router";
 import "../css/ErrorPage.css";
 import type { JSX } from "react";
-import type { ErrorResponse } from "../utils/Types";
 
 interface ErrorInfo {
   title: string;
@@ -10,31 +9,38 @@ interface ErrorInfo {
 }
 
 const ErrorPage = (): JSX.Element => {
-  const error = useRouteError() as ErrorResponse;
+  const error = useRouteError();
   const navigate = useNavigate();
 
   const getErrorInfo = (): ErrorInfo => {
-    if (error?.status === 404) {
-      return {
-        title: "Page Not Found",
-        message: "The page you're looking for doesn't exist.",
-        statusCode: "404",
-      };
-    }
+    if (isRouteErrorResponse(error)) {
+      if (error.status === 404) {
+        return {
+          title: "Page Not Found",
+          message: "The page you're looking for doesn't exist.",
+          statusCode: "404",
+        };
+      }
 
-    if (error?.status >= 500) {
+      if (error.status >= 500) {
+        return {
+          title: "Server Error",
+          message: "Something went wrong on our end.",
+          statusCode: error.status,
+        };
+      }
+
       return {
-        title: "Server Error",
-        message: "Something went wrong on our end.",
+        title: "Request Error",
+        message: error.statusText || "Something went wrong with your request.",
         statusCode: error.status,
       };
     }
-
-    if (error?.message) {
+    if (error instanceof Error) {
       return {
         title: "Something went wrong",
         message: error.message,
-        statusCode: error.status,
+        statusCode: "Error",
       };
     }
 

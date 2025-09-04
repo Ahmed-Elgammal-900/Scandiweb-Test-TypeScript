@@ -8,11 +8,6 @@ interface Categories {
   categories: Category[];
 }
 
-interface ErrorResponse extends Error {
-  status: number;
-  message: string;
-}
-
 interface GalleryProps {
   gallery: string[];
 }
@@ -87,7 +82,6 @@ interface ProductCart {
 
 export type {
   Categories,
-  ErrorResponse,
   GalleryProps,
   AttributeInfo,
   Product,

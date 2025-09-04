@@ -1,7 +1,6 @@
 import { useContext, useLayoutEffect, type JSX } from "react";
 import { NavLink, useLocation, useNavigate, useParams } from "react-router";
 import { NavContext } from "../../utils/NavContext";
-import type { ErrorResponse } from "../../utils/Types";
 
 const Navigation = (): JSX.Element => {
   const { categories } = useContext(NavContext);
@@ -28,9 +27,7 @@ const Navigation = (): JSX.Element => {
 
     const validCategories = categories.map(({ name }) => name.toLowerCase());
     if (!validCategories.includes(currentPath)) {
-      const error = new Error() as ErrorResponse;
-      error.status = 404;
-      throw Error;
+      throw new Response("Not Found", { status: 404 });
     }
   }, [categories, location.pathname, navigate]);
 
