@@ -1,0 +1,51 @@
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20vh;
+}
+
+.error-code {
+  margin-bottom: 25px;
+  font-size: 33px;
+}
+
+.error-title {
+  font-size: 27px;
+  margin-bottom: 30px;
+}
+
+.error-massege {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.Redir-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+  margin-top: 30px;
+}
+
+.Redir-buttons button {
+  padding: 15px;
+  border: none;
+  background-color: #5ece7b;
+  color: white;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+.Redir-buttons button:hover {
+  cursor: pointer;
+  background-color: #6fdc8c;
+}
+
+.Redir-buttons button:active {
+  background-color: #45e06f;
+}

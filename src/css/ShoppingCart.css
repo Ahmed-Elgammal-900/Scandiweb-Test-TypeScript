@@ -1,0 +1,175 @@
+.cart{
+    display: none;
+}
+
+.showing-cart{
+    position: fixed;
+    padding: 25px;
+    top: 60px;
+    right: 45px;
+    width: 450px;
+    height: 528px;    
+    background-color: white;
+    z-index: 1000;
+    animation-name: drop-down;
+    animation-duration: 0.3s;
+    animation-play-state: running;
+}
+
+.content{
+    overflow-y: auto;
+    height: 350px;
+    width: 400px;
+}
+
+.content{
+    height: 350px;
+    width: 400px;
+    padding-top: 20px;
+}
+
+.content  h4{
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Raleway';
+    margin-bottom: 15px;
+}
+
+.content  h4 + p{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Raleway';
+    margin-bottom: 0;
+}
+
+
+
+.content .fields .heading h4{
+    margin-bottom: 9px;
+}
+
+.content .fields .heading p{
+    margin-bottom: 10px;
+}
+
+.content .fields{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 370px;
+    padding-bottom: 40px;
+}
+
+.content .fields .swatches .field h6{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Raleway';
+}
+
+.content .image{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.content .image .buttons{
+    display: flex;
+    flex-direction: column;
+    height: 167px;
+    justify-content: space-between;
+}
+
+.content .image .buttons button{
+    border: 1px solid black;
+    background: transparent;
+}
+
+.swatch label.text.shoppingCart{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+}
+
+.swatch label.text.shoppingCart:not(:first-of-type){
+    margin-left: 10px;
+}
+
+.swatch label.color.shoppingCart{
+width: 20px;
+height: 20px;
+}
+
+.swatch label.color.shoppingCart:not(:first-of-type){
+    margin-left: 10px;
+}
+
+.swatch label.color.shoppingCart:first-of-type{
+    margin-left: 3px;
+}
+
+.swatch label.shoppingCart:hover{
+    cursor: default;
+}
+
+.content .image img{
+    width: 121px;
+    height: 167px;
+}
+
+.swatch.shoppingCart{
+    margin: 10px 0;
+}
+
+.place-order-button{
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    width: 400px;
+    height: 40px;
+    background-color: #5ECE7B;
+    border: none;
+}
+
+.place-order-button:hover{
+cursor: pointer;
+background-color: #73e992;
+}
+
+.place-order-button:disabled{
+    background-color: gray;
+    opacity: 0.6;
+}
+
+.place-order-button:disabled:hover{
+    cursor: not-allowed;
+    background-color: gray;
+}
+
+.cart-total-text{
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+@keyframes drop-down {
+    from{
+        opacity: 0;
+        top: 40px;
+    }
+
+    to{
+        opacity: 1;
+        top: 60px;
+    }
+}
