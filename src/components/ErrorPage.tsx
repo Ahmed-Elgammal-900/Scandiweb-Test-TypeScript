@@ -13,7 +13,7 @@ const ErrorPage = (): JSX.Element => {
   const navigate = useNavigate();
 
   const getErrorInfo = (): ErrorInfo => {
-    if (isRouteErrorResponse(error)) {
+    if (isRouteErrorResponse(error) || error instanceof Response) {
       if (error.status === 404) {
         return {
           title: "Page Not Found",
