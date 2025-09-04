@@ -3,11 +3,17 @@ import "../css/ErrorPage.css";
 import type { JSX } from "react";
 import type { ErrorResponse } from "../utils/Types";
 
+interface ErrorInfo {
+  title: string;
+  message: string;
+  statusCode: string | number;
+}
+
 const ErrorPage = (): JSX.Element => {
   const error = useRouteError() as ErrorResponse;
   const navigate = useNavigate();
 
-  const getErrorInfo = () => {
+  const getErrorInfo = (): ErrorInfo => {
     if (error?.status === 404) {
       return {
         title: "Page Not Found",
