@@ -50,7 +50,7 @@ const areItemsSame = (
 };
 
 const shoppingCartSlice = createSlice({
-  name: "shoppingCart",
+  name: "products",
   initialState,
   reducers: {
     addToCart: (
