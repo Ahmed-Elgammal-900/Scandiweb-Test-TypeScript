@@ -11,7 +11,6 @@ import { GET_PRODUCT } from "../../utils/queries";
 import type { Product, SelectedOptions } from "../../utils/Types";
 import { useAppDispatch } from "../../app/hooks";
 import { addToCart } from "../../features/shoppingcartSlice";
-import {client} from '../../utils/ApolloClient'
 
 interface Options {
   [key: string]: string;
@@ -21,7 +20,7 @@ const ProductPage = (): JSX.Element => {
   const { productId } = useParams();
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({});
   const dispatch = useAppDispatch();
-  console.log(client.extract())
+
   const {
     data: data,
     loading: loading,
