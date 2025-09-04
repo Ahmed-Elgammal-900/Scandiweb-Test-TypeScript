@@ -13,7 +13,7 @@ const CartButton = (): JSX.Element => {
   return (
     <button
       className="place-order-button translate-middle text-light"
-      disabled={count == 0}
+      disabled={count === 0 || isLoadingSubmission}
       onClick={() => dispatch(sendShoppingCart())}
     >
       {isLoadingSubmission ? (
