@@ -17,7 +17,7 @@ interface InitialState {
 
 const loadFromLoacalStorage = (): ProductCart[] => {
   try {
-    const data = localStorage.getItem("shoppingCart");
+    const data = localStorage.getItem("products");
     if (!data) {
       return [];
     }
@@ -50,7 +50,7 @@ const areItemsSame = (
 };
 
 const shoppingCartSlice = createSlice({
-  name: "products",
+  name: "shoppingCart",
   initialState,
   reducers: {
     addToCart: (
