@@ -1,7 +1,7 @@
 import { createAppAsyncThunk } from "../app/asyncThunk";
 import { client } from "../utils/ApolloClient";
 import { SEND_PRODUCTS } from "../utils/queries";
-import { selectShoppingcart } from "./shoppingcartSlice";
+import { selectProducts } from "./shoppingcartSlice";
 
 interface MutationResponse {
   createOrders: string;
@@ -13,7 +13,7 @@ export const sendShoppingCart = createAppAsyncThunk<
   { rejectValue: { error: string } }
 >("shoppingcart/sendData", async (_, ThunkApi) => {
   try {
-    const products = selectShoppingcart(ThunkApi.getState());
+    const products = selectProducts(ThunkApi.getState());
 
     const ItemInput = products.map(
       ({

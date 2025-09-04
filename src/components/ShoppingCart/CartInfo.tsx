@@ -2,10 +2,10 @@ import CartItem from "./CartItem";
 import { InnerCartContext } from "../../utils/InnerCartContext";
 import { type JSX } from "react";
 import { useAppSelector } from "../../app/hooks";
-import { selectResponse, selectShoppingcart } from "../../features/shoppingcartSlice";
+import { selectResponse, selectProducts } from "../../features/shoppingcartSlice";
 
 const CartInfo = (): JSX.Element => {
-  const shoppingCart = useAppSelector(selectShoppingcart)
+  const cartProducts = useAppSelector(selectProducts)
   const response = useAppSelector(selectResponse)
   return (
     <div
@@ -14,7 +14,7 @@ const CartInfo = (): JSX.Element => {
         display: response ? "none" : "block",
       }}
     >
-      {shoppingCart.map((obj, ind) => (
+      {cartProducts.map((obj, ind) => (
         <InnerCartContext
           value={{ obj, ind }}
           key={obj.product.id + Object.values(obj.selectedOptions).join("-")}

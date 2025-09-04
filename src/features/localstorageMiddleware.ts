@@ -16,7 +16,7 @@ export const localStorageSyncMiddleware: Middleware =
       const state = storeAPI.getState();
       try {
         localStorage.setItem(
-          "shoppingCart",
+          "products",
           JSON.stringify(state.shoppingcart.products)
         );
       } catch (err) {

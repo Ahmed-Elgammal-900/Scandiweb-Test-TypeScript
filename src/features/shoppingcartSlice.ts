@@ -147,7 +147,7 @@ export const selectShowCart = (state: RootState) => state.shoppingcart.showCart;
 export const selectResponse = (state: RootState) => state.shoppingcart.response;
 export const selectIsLoadingSubmission = (state: RootState) =>
   state.shoppingcart.isLoadingSubmission;
-export const selectShoppingcart = (state: RootState) =>
+export const selectProducts = (state: RootState) =>
   state.shoppingcart.products;
 export const selectProductsCount = (state: RootState) =>
   state.shoppingcart.products.reduce(
