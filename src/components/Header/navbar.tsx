@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
-import "../../css/navbar.css";
+import "../../css/Navbar.css"
 import ShoppingCart from "../ShoppingCart/shoppingCart.js";
 import Navigation from "./Navigation.js";
 import ShoppingCartButton from "./ShoppingCartButton.js";
