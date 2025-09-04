@@ -104,7 +104,7 @@ const shoppingCartSlice = createSlice({
       if (itemIndex !== -1) {
         const item = state.products[itemIndex];
         item.product.count -= 1;
-        if (item.product.count <= 0) {
+        if (item.product.count === 0) {
           state.products.splice(itemIndex, 1);
         }
       }
