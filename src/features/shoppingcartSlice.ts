@@ -3,7 +3,7 @@ import type { ProductCart, SelectedOptions } from "../utils/Types";
 import type { RootState } from "../app/store";
 import { sendShoppingCart } from "./muatationAsyncThunk";
 
-type ProductParam = {
+interface ProductParam {
   id: string;
   selectedOptions: SelectedOptions;
 }
@@ -147,8 +147,7 @@ export const selectShowCart = (state: RootState) => state.shoppingcart.showCart;
 export const selectResponse = (state: RootState) => state.shoppingcart.response;
 export const selectIsLoadingSubmission = (state: RootState) =>
   state.shoppingcart.isLoadingSubmission;
-export const selectProducts = (state: RootState) =>
-  state.shoppingcart.products;
+export const selectProducts = (state: RootState) => state.shoppingcart.products;
 export const selectProductsCount = (state: RootState) =>
   state.shoppingcart.products.reduce(
     (total, { product: { count } }) => total + count,

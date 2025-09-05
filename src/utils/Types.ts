@@ -1,16 +1,16 @@
 import type { ChangeEvent } from "react";
 
-type Category = {
+interface Category {
   name: string;
-};
+}
 
-type Categories = {
+interface Categories {
   categories: Category[];
-};
+}
 
-type GalleryProps = {
+interface GalleryProps {
   gallery: string[];
-};
+}
 
 interface AttributeInfo {
   id: string;
@@ -36,19 +36,19 @@ interface Product {
   prices: Price;
 }
 
-type Price = {
+interface Price {
   amount: number;
   currency: Currency;
-};
+}
 
-type Currency = {
+interface Currency {
   label: string;
   symbol: string;
-};
+}
 
-type SelectedOptions = {
+interface SelectedOptions {
   [key: string]: string;
-};
+}
 
 interface GalleryContextType {
   image: number;
@@ -75,14 +75,14 @@ interface ProductItem extends Product {
   count: number;
 }
 
-type ProductCart = {
+interface ProductCart {
   product: ProductItem;
   selectedOptions: SelectedOptions;
-};
+}
 
-type ProductData = {
+interface ProductData {
   product: Product;
-};
+}
 
 export type {
   Categories,
@@ -94,5 +94,5 @@ export type {
   Item,
   PdpContextType,
   ProductCart,
-  ProductData
+  ProductData,
 };
