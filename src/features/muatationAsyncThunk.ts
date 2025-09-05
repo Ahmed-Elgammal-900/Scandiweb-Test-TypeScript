@@ -3,9 +3,9 @@ import { client } from "../utils/ApolloClient";
 import { SEND_PRODUCTS } from "../utils/queries";
 import { selectProducts } from "./shoppingcartSlice";
 
-interface MutationResponse {
+type MutationResponse = {
   createOrders: string;
-}
+};
 
 export const sendShoppingCart = createAppAsyncThunk<
   string,

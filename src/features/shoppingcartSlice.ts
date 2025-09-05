@@ -3,7 +3,7 @@ import type { ProductCart, SelectedOptions } from "../utils/Types";
 import type { RootState } from "../app/store";
 import { sendShoppingCart } from "./muatationAsyncThunk";
 
-interface ProductParam {
+type ProductParam = {
   id: string;
   selectedOptions: SelectedOptions;
 }
