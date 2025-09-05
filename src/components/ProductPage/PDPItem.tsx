@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import { usePdpContext } from "../../utils/PdpContext";
 import type { AttributeInfo, Item } from "../../utils/Types";
 
-interface ElementProps {
+type ElementProps = {
   item: Item;
   index: number;
   attribute: AttributeInfo;

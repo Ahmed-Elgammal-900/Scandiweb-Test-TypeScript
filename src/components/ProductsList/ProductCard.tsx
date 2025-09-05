@@ -2,11 +2,8 @@ import ProductImg from "./ProductImg";
 import ProductInfo from "./ProductInfo";
 import AddToCart from "./AddToCart";
 import { useNavigate } from "react-router";
-import type { Product } from "../../utils/Types";
 import type { JSX } from "react";
-interface ProductData {
-  product: Product;
-}
+import type { ProductData } from "../../utils/Types";
 
 const ProductCard = ({ product }: ProductData): JSX.Element => {
   const navigate = useNavigate();

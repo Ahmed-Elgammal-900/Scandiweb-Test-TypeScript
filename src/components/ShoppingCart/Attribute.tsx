@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import ItemSelection from "./ItemSelection";
 import type { AttributeInfo, SelectedOptions } from "../../utils/Types";
-interface ElementProps {
+type ElementProps = {
   selectedOptions: SelectedOptions;
   attribute: AttributeInfo;
 }

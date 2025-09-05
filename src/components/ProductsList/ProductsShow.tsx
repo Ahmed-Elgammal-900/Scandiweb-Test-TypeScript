@@ -7,9 +7,9 @@ import CardsPlaceHolder from "../Placeholders/CardsPlaceHolder.js";
 import type { Product } from "../../utils/Types.js";
 import type { JSX } from "react";
 
-interface ProductsData {
+type ProductsData = {
   products: Product[];
-}
+};
 
 const ProductsShow = (): JSX.Element => {
   const { category } = useParams();

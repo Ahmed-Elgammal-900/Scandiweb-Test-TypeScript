@@ -4,11 +4,13 @@ import ProductPrice from "./ProductPrice";
 import HtmlParser from "../../utils/HTMLParser";
 import AddToCart from "./AddToCart";
 import type { AttributeInfo } from "../../utils/Types";
-interface ElementProps {
+
+type ElementProps = {
   name: string;
   attributes: AttributeInfo[];
   description: string;
-}
+};
+
 const Info = memo(
   ({ name, attributes, description }: ElementProps): JSX.Element => {
     return (

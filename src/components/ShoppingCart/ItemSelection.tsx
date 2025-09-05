@@ -1,10 +1,12 @@
 import { useInnerCartContext } from "../../utils/InnerCartContext";
 import type { AttributeInfo, Item } from "../../utils/Types";
-interface ElementProps {
+
+type ElementProps = {
   item: Item;
   index: number;
   attribute: AttributeInfo;
-}
+};
+
 const ItemSelection = ({
   item: { id: itemId, value, displayValue },
   index,

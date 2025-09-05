@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import { useGalleryContext } from "../../utils/GalleryContext";
 
-interface ElementProps {
+type ElementProps = {
   img: string;
   index: number;
 }

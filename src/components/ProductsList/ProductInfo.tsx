@@ -1,11 +1,11 @@
 import type { JSX } from "react";
 
-interface ElementProps {
+type ElementProps = {
   name: string;
   instock: string;
   symbol: string;
   amount: number;
-}
+};
 
 const ProductInfo = ({
   name,

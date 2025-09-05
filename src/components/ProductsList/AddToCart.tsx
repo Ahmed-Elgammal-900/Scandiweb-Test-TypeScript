@@ -3,10 +3,7 @@ import Cart from "../../assets/Empty Cart.svg";
 import type { Product, SelectedOptions } from "../../utils/Types";
 import { useAppDispatch } from "../../app/hooks";
 import { addToCart } from "../../features/shoppingcartSlice";
-
-interface ProductData {
-  product: Product;
-}
+import type { ProductData } from "../../utils/Types";
 
 const AddToCart = ({ product }: ProductData): JSX.Element => {
   const dispatch = useAppDispatch();

@@ -12,9 +12,9 @@ import type { Product, SelectedOptions } from "../../utils/Types";
 import { useAppDispatch } from "../../app/hooks";
 import { addToCart } from "../../features/shoppingcartSlice";
 
-interface Options {
+type Options = {
   [key: string]: string;
-}
+};
 
 const ProductPage = (): JSX.Element => {
   const { productId } = useParams();

@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import type { AttributeInfo } from "../../utils/Types";
 import PDPItem from "./PDPItem";
 
-interface ElementProps {
+type ElementProps = {
   attribute: AttributeInfo;
 }
 const PDPAttribute = ({ attribute }: ElementProps): JSX.Element => {

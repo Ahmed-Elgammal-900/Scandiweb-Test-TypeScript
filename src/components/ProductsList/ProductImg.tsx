@@ -1,9 +1,10 @@
 import type { JSX } from "react";
 
-interface ElementProps {
+type ElementProps = {
   firstImage: string;
   instock: string;
-}
+};
+
 const ProductImg = ({ firstImage, instock }: ElementProps): JSX.Element => {
   return (
     <img

@@ -2,7 +2,8 @@ import { memo, useState, type JSX } from "react";
 import CarouselIndicators from "./CarouselIndicators";
 import CarouselInner from "./CarouserInner";
 import { GalleryContext } from "../../utils/GalleryContext";
-interface ElementProps {
+
+type ElementProps = {
   gallery: string[];
   instock: string;
 };
