@@ -29,7 +29,7 @@ const Navigation = (): JSX.Element => {
     if (!validCategories.includes(currentPath)) {
       throw new Response("Not Found", { status: 404 });
     }
-  }, [categories, location.pathname, navigate]);
+  }, [categories, location.pathname, navigate, currentPath]);
 
   const updatedCategories = categories.map(({ name }) => {
     const path = name.toLowerCase();
