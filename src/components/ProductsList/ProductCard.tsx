@@ -9,7 +9,7 @@ const ProductCard = ({ product }: ProductData): JSX.Element => {
   const navigate = useNavigate();
   const handleProductClick = (productId: string) => {
     navigate(`${productId}`);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const {
