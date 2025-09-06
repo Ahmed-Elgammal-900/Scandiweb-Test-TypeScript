@@ -1,4 +1,4 @@
-import { useState, useEffect, type ChangeEvent, type JSX } from "react";
+import { useState, useLayoutEffect, type ChangeEvent, type JSX } from "react";
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client/react";
 import "../../css/ProductPage.css";
@@ -29,7 +29,7 @@ const ProductPage = (): JSX.Element => {
     variables: { id: productId },
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (data?.product) {
       const options: Options = {};
       data.product.attributes.forEach(({ id }) => {
