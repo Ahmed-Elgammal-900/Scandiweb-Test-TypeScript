@@ -4,6 +4,7 @@ import { localStorageSyncMiddleware } from "../features/localstorageMiddleware";
 
 export const store = configureStore({
   reducer: { shoppingcart: shoppingcartReducer },
+  devTools: import.meta.env.DEV,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(localStorageSyncMiddleware),
 });
