@@ -1,4 +1,4 @@
-import { useContext, useLayoutEffect, type JSX } from "react";
+import { useContext, useEffect, type JSX } from "react";
 import { NavLink, useLocation, useNavigate, useParams } from "react-router";
 import { NavContext } from "../../utils/NavContext";
 
@@ -8,7 +8,7 @@ const Navigation = (): JSX.Element => {
   const location = useLocation();
   const { category: currentPath } = useParams();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!categories.length) return;
 
     const [{ name }] = categories;
