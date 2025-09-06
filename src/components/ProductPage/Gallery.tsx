@@ -7,6 +7,7 @@ type ElementProps = {
   gallery: string[];
   instock: string;
 };
+
 const Gallery = memo(
   ({ gallery, instock }: ElementProps): JSX.Element => {
     const [image, setImage] = useState<number>(0);

@@ -5,6 +5,7 @@ import PDPItem from "./PDPItem";
 type ElementProps = {
   attribute: AttributeInfo;
 }
+
 const PDPAttribute = ({ attribute }: ElementProps): JSX.Element => {
   const { name, items } = attribute;
   return (

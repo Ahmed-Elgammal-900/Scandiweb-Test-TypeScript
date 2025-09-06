@@ -1,13 +1,15 @@
 import { memo, type JSX, type ReactElement } from "react";
 
-type HtmlString = {
+interface HtmlString {
   htmlString: string;
-};
-type ParseElement = {
+}
+
+interface ParseElement {
   tag: string;
   children: (ParseElement | string)[];
   key: string;
-};
+}
+
 type RenderableElement = ParseElement | string;
 
 const HtmlParser = memo(
