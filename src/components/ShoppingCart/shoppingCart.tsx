@@ -6,8 +6,9 @@ import CartButton from "./CartButton.js";
 import ResponseMassege from "./ResponseMassege.js";
 import { useAppSelector } from "../../app/hooks.js";
 import { selectShowCart } from "../../features/shoppingcartSlice.js";
+import type { JSX } from "react";
 
-const ShoppingCart = () => {
+const ShoppingCart = (): JSX.Element => {
   const showCart = useAppSelector(selectShowCart);
   return (
     <div

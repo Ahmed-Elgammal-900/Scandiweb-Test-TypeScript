@@ -1,7 +1,8 @@
 import CartItemsControls from "./CartItemsControls";
 import { useInnerCartContext } from "../../utils/InnerCartContext";
+import type { JSX } from "react";
 
-const ItemImage = () => {
+const ItemImage = (): JSX.Element => {
   const {
     obj: {
       product: {

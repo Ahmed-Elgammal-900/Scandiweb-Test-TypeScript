@@ -1,8 +1,9 @@
+import type { JSX } from "react";
 import { useAppSelector } from "../../app/hooks";
 import { selectResponse } from "../../features/shoppingcartSlice";
 
-const ResponseMassege = () => {
-  const  responseData = useAppSelector(selectResponse);
+const ResponseMassege = (): JSX.Element => {
+  const responseData = useAppSelector(selectResponse);
   return (
     <p
       style={{

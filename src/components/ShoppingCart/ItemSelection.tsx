@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import { useInnerCartContext } from "../../utils/InnerCartContext";
 import type { AttributeInfo, Item } from "../../utils/Types";
 
@@ -11,7 +12,7 @@ const ItemSelection = ({
   item: { id: itemId, value, displayValue },
   index,
   attribute: { id: attributeId, name, type },
-}: ElementProps) => {
+}: ElementProps): JSX.Element => {
   const {
     obj: {
       product: { id: productId },

@@ -1,6 +1,7 @@
+import type { JSX } from "react";
 import { useInnerCartContext } from "../../utils/InnerCartContext";
 
-const ProductName = () => {
+const ProductName = (): JSX.Element => {
   const {
     obj: {
       product: {
