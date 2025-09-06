@@ -16,7 +16,9 @@ const Layout = (): JSX.Element => {
 
   useEffect(() => {
     const savedProducts = loadFromLocalStorage();
-    dispatch(setProducts(savedProducts));
+    if (savedProducts.length) {
+      dispatch(setProducts(savedProducts));
+    }
   }, []);
 
   if (error) {
