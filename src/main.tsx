@@ -6,6 +6,14 @@ import { ApolloProvider } from "@apollo/client/react";
 import { client } from "./utils/ApolloClient";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
+import { loadFromLocalStorage } from "./utils/LoadFromLocalStorage";
+import { setProducts } from "./features/shoppingcartSlice";
+
+const products = loadFromLocalStorage();
+
+if (products.length) {
+  store.dispatch(setProducts(products));
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
