@@ -15,21 +15,8 @@ interface InitialState {
   showCart: boolean;
 }
 
-const loadFromLoacalStorage = (): ProductCart[] => {
-  try {
-    const data = localStorage.getItem("products");
-    if (!data) {
-      return [];
-    }
-    return JSON.parse(data);
-  } catch (error) {
-    console.error("Failed to load localStorage", error);
-    return [];
-  }
-};
-
 const initialState: InitialState = {
-  products: loadFromLoacalStorage(),
+  products: [],
   isLoadingSubmission: false,
   response: "",
   showCart: false,
@@ -116,6 +103,10 @@ const shoppingCartSlice = createSlice({
         state.response = "";
       }
     },
+
+    setProducts: (state, action: PayloadAction<ProductCart[]>) => {
+      state.products = action.payload;
+    },
   },
 
   extraReducers(builder) {
@@ -140,7 +131,7 @@ const shoppingCartSlice = createSlice({
 
 export default shoppingCartSlice.reducer;
 
-export const { setShowCart, addToCart, increment, decrement } =
+export const { setShowCart, addToCart, increment, decrement, setProducts } =
   shoppingCartSlice.actions;
 
 export const selectShowCart = (state: RootState) => state.shoppingcart.showCart;
