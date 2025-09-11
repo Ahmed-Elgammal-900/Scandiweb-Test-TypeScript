@@ -47,7 +47,7 @@ export const sendShoppingCart = createAppAsyncThunk<
   } catch (error) {
     console.error(error);
     if (error instanceof Error) {
-      return ThunkApi.rejectWithValue({ error: error.toString() });
+      return ThunkApi.rejectWithValue({ error: error.message });
     } else {
       return ThunkApi.rejectWithValue({ error: "unexpected error" });
     }
