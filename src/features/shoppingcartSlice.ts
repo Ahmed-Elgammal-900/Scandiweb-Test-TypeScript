@@ -122,7 +122,7 @@ const shoppingCartSlice = createSlice({
       if (action.payload) {
         state.response = action.payload.error;
       } else {
-        state.response = action.error.message ?? "Unknown error";
+        state.response = action.error?.message ?? "Unknown error";
       }
       state.isLoadingSubmission = false;
     });
