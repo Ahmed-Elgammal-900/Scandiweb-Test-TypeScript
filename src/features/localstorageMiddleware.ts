@@ -1,9 +1,17 @@
-import type { Middleware } from "@reduxjs/toolkit";
+import type {
+  Dispatch,
+  Middleware,
+  MiddlewareAPI,
+  UnknownAction,
+} from "@reduxjs/toolkit";
 import { addToCart, increment, decrement } from "./shoppingcartSlice";
 import { sendShoppingCart } from "./muatationAsyncThunk";
+import type { RootState } from "../app/store";
 
 export const localStorageSyncMiddleware: Middleware =
-  (storeAPI) => (next) => (action) => {
+  (storeAPI: MiddlewareAPI<Dispatch<UnknownAction>, RootState>) =>
+  (next) =>
+  (action) => {
     const result = next(action);
 
     const condition =
