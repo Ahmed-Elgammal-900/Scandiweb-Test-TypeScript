@@ -27,8 +27,8 @@ export const localStorageSyncMiddleware: Middleware =
           "products",
           JSON.stringify(state.shoppingcart.products)
         );
-      } catch (err) {
-        console.warn("Failed to sync cart to localStorage", err);
+      } catch (error) {
+        console.warn("Failed to sync cart to localStorage", error);
       }
     }
 
