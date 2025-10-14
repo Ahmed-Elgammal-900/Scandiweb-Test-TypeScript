@@ -15,7 +15,7 @@ const AddToCart = ({ product }: ProductData): JSX.Element => {
     event.stopPropagation();
     const selectedOptions: SelectedOptions = {};
     const data = { product: { ...product, count: 1 }, selectedOptions };
-    product.attributes.map(
+    product.attributes.forEach(
       ({ id, items: [{ value }] }) => (data.selectedOptions[id] = value)
     );
     dispatch(addToCart(data));
