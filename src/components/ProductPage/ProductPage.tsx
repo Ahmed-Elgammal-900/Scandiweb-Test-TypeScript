@@ -31,6 +31,7 @@ const ProductPage = (): JSX.Element => {
 
   useLayoutEffect(() => {
     if (data?.product) {
+      window.scrollTo({ top: 0, behavior: "instant" });
       const options: Options = {};
       data.product.attributes.forEach(({ id }) => {
         options[id] = "";
