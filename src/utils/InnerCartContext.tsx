@@ -1,9 +1,11 @@
 import { createContext, useContext } from "react";
 import type { ProductCart } from "./Types";
+
 interface Context {
   obj: ProductCart;
   ind: number;
 }
+
 export const InnerCartContext = createContext<Context | undefined>(undefined);
 
 export const useInnerCartContext = () => {
