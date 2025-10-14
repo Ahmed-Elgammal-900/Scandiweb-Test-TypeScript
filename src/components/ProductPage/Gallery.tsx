@@ -16,11 +16,15 @@ const Gallery = memo(
     };
 
     const goToNextSlide = () => {
-      setImage((image) => (image === gallery.length - 1 ? 0 : image + 1));
+      setImage((prevImage) =>
+        prevImage === gallery.length - 1 ? 0 : prevImage + 1
+      );
     };
 
     const goToPrevSlide = () => {
-      setImage((image) => (image === 0 ? gallery.length - 1 : image - 1));
+      setImage((prevImage) =>
+        prevImage === 0 ? gallery.length - 1 : prevImage - 1
+      );
     };
 
     return (
