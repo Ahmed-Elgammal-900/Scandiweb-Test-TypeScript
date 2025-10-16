@@ -11,22 +11,14 @@ const Navigation = (): JSX.Element => {
   useEffect(() => {
     if (!categories.length) return;
 
-    const [{ name }] = categories;
-
     if (location.pathname.endsWith("/") && location.pathname !== "/") {
       const cleanPath = location.pathname.replace(/\/$/, "");
       navigate(cleanPath, { replace: true });
       return;
     }
 
-    if (location.pathname === "/" || !currentPath) {
-      const firstCategoryPath = name.toLowerCase();
-      navigate(`/${firstCategoryPath}`, { replace: true });
-      return;
-    }
-
     const validCategories = categories.map(({ name }) => name.toLowerCase());
-    if (!validCategories.includes(currentPath)) {
+    if (currentPath && !validCategories.includes(currentPath.toLowerCase())) {
       throw new Response("Not Found", { status: 404 });
     }
   }, [categories, location.pathname, navigate, currentPath]);

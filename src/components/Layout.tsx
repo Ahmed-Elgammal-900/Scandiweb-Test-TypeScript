@@ -23,7 +23,7 @@ const Layout = (): JSX.Element => {
       <NavContext value={data!}>
         <Header />
       </NavContext>
-      <Outlet />
+      <Outlet context={data} />
     </>
   );
 };
