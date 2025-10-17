@@ -18,7 +18,7 @@ const Layout = (): JSX.Element => {
     return <Loading />;
   }
 
-  const categories = data?.categories.map(({ name }) => name.toLowerCase());
+  const categories = data!.categories.map(({ name }) => name.toLowerCase());
 
   return (
     <>
