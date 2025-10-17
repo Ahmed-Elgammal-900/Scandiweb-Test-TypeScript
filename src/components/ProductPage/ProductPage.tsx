@@ -72,7 +72,7 @@ const ProductPage = (): JSX.Element => {
     dispatch(addToCart(payload));
 
     const options: Options = {};
-    data?.product.attributes.forEach(({ id }) => {
+    data!.product.attributes.forEach(({ id }) => {
       options[id] = "";
     });
     setSelectedOptions(options);
