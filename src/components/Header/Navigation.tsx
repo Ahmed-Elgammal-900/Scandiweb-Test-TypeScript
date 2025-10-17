@@ -9,18 +9,16 @@ const Navigation = (): JSX.Element => {
   const { category: currentPath } = useParams();
 
   useEffect(() => {
-    if (!categories.length) return;
-
     if (location.pathname.endsWith("/") && location.pathname !== "/") {
       const cleanPath = location.pathname.replace(/\/$/, "");
       navigate(cleanPath, { replace: true });
       return;
     }
+  }, [categories, location.pathname, navigate]);
 
-    if (currentPath && !categories.includes(currentPath)) {
-      throw new Response("Not Found", { status: 404 });
-    }
-  }, [categories, location.pathname, navigate, currentPath]);
+  if (currentPath && !categories.includes(currentPath)) {
+    throw new Response("Not Found", { status: 404 });
+  }
 
   const updatedCategories = categories.map((name) => {
     return {
