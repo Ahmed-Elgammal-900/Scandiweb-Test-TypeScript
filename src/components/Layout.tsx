@@ -18,12 +18,14 @@ const Layout = (): JSX.Element => {
     return <Loading />;
   }
 
+  const categories = data?.categories.map(({ name }) => name.toLowerCase());
+
   return (
     <>
-      <NavContext value={data!}>
+      <NavContext value={categories!}>
         <Header />
       </NavContext>
-      <Outlet context={data} />
+      <Outlet context={categories} />
     </>
   );
 };

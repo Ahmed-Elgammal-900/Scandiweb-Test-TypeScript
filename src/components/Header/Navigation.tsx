@@ -3,7 +3,7 @@ import { NavLink, useLocation, useNavigate, useParams } from "react-router";
 import { NavContext } from "../../utils/NavContext";
 
 const Navigation = (): JSX.Element => {
-  const { categories } = useContext(NavContext);
+  const categories = useContext(NavContext);
   const navigate = useNavigate();
   const location = useLocation();
   const { category: currentPath } = useParams();
@@ -17,18 +17,16 @@ const Navigation = (): JSX.Element => {
       return;
     }
 
-    const validCategories = categories.map(({ name }) => name.toLowerCase());
-    if (currentPath && !validCategories.includes(currentPath.toLowerCase())) {
+    if (currentPath && !categories.includes(currentPath.toLowerCase())) {
       throw new Response("Not Found", { status: 404 });
     }
   }, [categories, location.pathname, navigate, currentPath]);
 
-  const updatedCategories = categories.map(({ name }) => {
-    const path = name.toLowerCase();
+  const updatedCategories = categories.map((name) => {
     return {
       name,
-      path,
-      active: currentPath === path,
+      path: name,
+      active: currentPath === name,
     };
   });
 
