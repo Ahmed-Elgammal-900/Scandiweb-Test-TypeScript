@@ -17,7 +17,7 @@ const Navigation = (): JSX.Element => {
       return;
     }
 
-    if (currentPath && !categories.includes(currentPath.toLowerCase())) {
+    if (currentPath && !categories.includes(currentPath)) {
       throw new Response("Not Found", { status: 404 });
     }
   }, [categories, location.pathname, navigate, currentPath]);
