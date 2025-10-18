@@ -22,7 +22,7 @@ const Layout = (): JSX.Element => {
 
   return (
     <>
-      <NavContext value={categories!}>
+      <NavContext value={categories}>
         <Header />
       </NavContext>
       <Outlet context={categories} />

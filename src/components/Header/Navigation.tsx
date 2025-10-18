@@ -12,7 +12,6 @@ const Navigation = (): JSX.Element => {
     if (location.pathname.endsWith("/") && location.pathname !== "/") {
       const cleanPath = location.pathname.replace(/\/$/, "");
       navigate(cleanPath, { replace: true });
-      return;
     }
   }, [categories, location.pathname, navigate]);
 
@@ -20,25 +19,19 @@ const Navigation = (): JSX.Element => {
     throw new Response("Not Found", { status: 404 });
   }
 
-  const updatedCategories = categories.map((name) => {
-    return {
-      name,
-      path: name,
-      active: currentPath === name,
-    };
-  });
-
   return (
     <ul className="list-unstyled d-flex gap-4 mb-0">
-      {updatedCategories.map(({ name, path, active }) => (
+      {categories.map((name) => (
         <li key={name}>
           <NavLink
             style={({ isActive }) => ({
               color: isActive ? "#5ECE7B" : "black",
               borderColor: isActive ? "#5ECE7B" : "transparent",
             })}
-            to={path}
-            data-testid={active ? "active-category-link" : "category-link"}
+            to={name}
+            data-testid={
+              name === currentPath ? "active-category-link" : "category-link"
+            }
           >
             {name}
           </NavLink>
