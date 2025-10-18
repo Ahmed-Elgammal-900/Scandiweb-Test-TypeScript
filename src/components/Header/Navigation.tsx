@@ -13,7 +13,7 @@ const Navigation = (): JSX.Element => {
       const cleanPath = location.pathname.replace(/\/$/, "");
       navigate(cleanPath, { replace: true });
     }
-  }, [categories, location.pathname, navigate]);
+  }, [location.pathname, navigate]);
 
   if (currentPath && !categories.includes(currentPath)) {
     throw new Response("Not Found", { status: 404 });
