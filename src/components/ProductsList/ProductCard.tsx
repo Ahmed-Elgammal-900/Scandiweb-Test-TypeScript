@@ -8,7 +8,7 @@ import type { ProductData } from "../../utils/Types";
 const ProductCard = ({ product }: ProductData): JSX.Element => {
   const navigate = useNavigate();
   const handleProductClick = (productId: string) => {
-    navigate(`${productId}`);
+    navigate(`product/${productId}`);
   };
 
   const {
