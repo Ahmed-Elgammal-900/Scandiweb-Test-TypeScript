@@ -28,7 +28,7 @@ const Navigation = (): JSX.Element => {
               color: isActive ? "#5ECE7B" : "black",
               borderColor: isActive ? "#5ECE7B" : "transparent",
             })}
-            to={name}
+            to={`/products/${name}`}
             data-testid={
               name === currentPath ? "active-category-link" : "category-link"
             }
